@@ -89,8 +89,8 @@
         }
         // Fallback for very old browsers — should not happen on a
         // Chromium-based extension target, but kept for robustness.
+        const ta = document.createElement('textarea');
         try {
-            const ta = document.createElement('textarea');
             ta.value = s;
             ta.setAttribute('readonly', '');
             ta.style.position = 'fixed';
@@ -98,8 +98,11 @@
             document.body.appendChild(ta);
             ta.select();
             document.execCommand('copy');
-            document.body.removeChild(ta);
-        } catch (_) { /* ignore */ }
+        } catch (_) {
+            /* ignore — caller surfaces failure */
+        } finally {
+            if (ta.parentNode) ta.parentNode.removeChild(ta);
+        }
         return undefined;
     };
 
