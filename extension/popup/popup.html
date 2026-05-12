@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Flex Email Generator</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="feg-pop-header">
+    <div class="feg-pop-title">✉ Flex Email Generator</div>
+    <div class="feg-pop-sub">Excel-based templates</div>
+  </header>
+
+  <main class="feg-pop-body">
+    <button type="button" class="feg-pop-btn" data-cmd="togglePanel">
+      <span class="feg-pop-icon">👁</span>
+      <span class="feg-pop-label">Toggle in-page panel</span>
+    </button>
+
+    <button type="button" class="feg-pop-btn" data-cmd="downloadTemplate">
+      <span class="feg-pop-icon">⬇️</span>
+      <span class="feg-pop-label">Download example .xlsx</span>
+    </button>
+
+    <button type="button" class="feg-pop-btn" data-cmd="pickExcel">
+      <span class="feg-pop-icon">📂</span>
+      <span class="feg-pop-label">Pick Excel file…</span>
+    </button>
+
+    <button type="button" class="feg-pop-btn" data-cmd="reloadExcel">
+      <span class="feg-pop-icon">🔄</span>
+      <span class="feg-pop-label">Reload from Excel</span>
+    </button>
+
+    <button type="button" class="feg-pop-btn feg-pop-danger" data-cmd="forgetExcel">
+      <span class="feg-pop-icon">🗑</span>
+      <span class="feg-pop-label">Forget Excel binding</span>
+    </button>
+  </main>
+
+  <footer class="feg-pop-footer">
+    <div id="feg-pop-status" class="feg-pop-status" aria-live="polite"></div>
+    <div class="feg-pop-hint">
+      Works on <code>portal.ul.com/Project/Details/*</code>.
+      If file picking fails from this popup, use the <strong>📂 Pick Excel</strong>
+      button in the in-page panel instead (some browsers require the file
+      picker to originate from the page itself).
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
