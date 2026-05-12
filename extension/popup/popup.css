@@ -1,0 +1,109 @@
+:root {
+  --feg-bg: #ffffff;
+  --feg-fg: #1f2933;
+  --feg-muted: #6b7785;
+  --feg-border: #e3e8ef;
+  --feg-primary: #1976d2;
+  --feg-primary-hover: #1565c0;
+  --feg-danger: #b71c1c;
+  --feg-danger-hover: #8e0000;
+  --feg-hover-bg: #f3f6fb;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei",
+               sans-serif;
+  font-size: 13px;
+  color: var(--feg-fg);
+  background: var(--feg-bg);
+}
+
+.feg-pop-header {
+  padding: 12px 14px 8px;
+  border-bottom: 1px solid var(--feg-border);
+}
+.feg-pop-title {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.feg-pop-sub {
+  margin-top: 2px;
+  font-size: 11px;
+  color: var(--feg-muted);
+}
+
+.feg-pop-body {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feg-pop-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--feg-fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 80ms ease, border-color 80ms ease;
+}
+.feg-pop-btn:hover:not(:disabled) {
+  background: var(--feg-hover-bg);
+  border-color: var(--feg-border);
+}
+.feg-pop-btn:focus-visible {
+  outline: 2px solid var(--feg-primary);
+  outline-offset: 1px;
+}
+.feg-pop-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.feg-pop-icon {
+  font-size: 15px;
+  width: 20px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+.feg-pop-label {
+  flex: 1 1 auto;
+}
+.feg-pop-danger { color: var(--feg-danger); }
+.feg-pop-danger:hover:not(:disabled) {
+  background: #fdecea;
+  border-color: #f5c6c2;
+}
+
+.feg-pop-footer {
+  padding: 8px 14px 12px;
+  border-top: 1px solid var(--feg-border);
+  font-size: 11px;
+  color: var(--feg-muted);
+}
+.feg-pop-status {
+  min-height: 14px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.feg-pop-status.ok    { color: #2e7d32; }
+.feg-pop-status.err   { color: var(--feg-danger); }
+.feg-pop-hint code {
+  background: #f0f3f7;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 10.5px;
+}
